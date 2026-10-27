@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    # WPF on .NET Framework needs Windows and the full MSBuild.
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore CarSharing.sln
+
+      - name: Build
+        run: msbuild CarSharing.sln /p:Configuration=Release /m /verbosity:minimal
+
+      - name: Test
+        run: dotnet test CarSharing.Tests/CarSharing.Tests.csproj --configuration Release --no-build --verbosity normal --logger "trx;LogFileName=results.trx" --results-directory TestResults
+
+      - name: Report test count
+        if: always()
+        shell: pwsh
+        run: |
+          [xml]$trx = Get-Content TestResults/results.trx
+          $c = $trx.TestRun.ResultSummary.Counters
+          Write-Output "::notice title=Tests::total=$($c.total) passed=$($c.passed) failed=$($c.failed)"
+          if ([int]$c.total -eq 0) { Write-Output "::error::No tests were discovered"; exit 1 }

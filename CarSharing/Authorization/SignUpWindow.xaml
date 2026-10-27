@@ -1,0 +1,125 @@
+﻿<Window x:Class="CarSharing.Authorization.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Height="720" Width="1024" Background="Transparent" ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Icon="/Authorization/64385.jpg">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--Top Section-->
+        <Border BorderThickness="0 0 0 0" BorderBrush="#E2E9E9" Background="#1C1C1C" CornerRadius="5 5 0 0 " Padding="10"
+                MouseDown ="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+
+
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <Button x:Name="WindowOpenFull" Style ="{StaticResource topButtonIcon}" Background="White" Click="WindowOpenFull_Click"/>
+                    <Button x:Name="WindowHide" Style ="{StaticResource topButtonIcon}" Background="White" Click="WindowHide_Click"/>
+                    <Button x:Name="WindowClose" Style ="{StaticResource topButtonIcon}" Background="White" Click="WindowClose_Click"/>
+                </StackPanel>
+
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="CarHouse" Foreground="White" FontFamily="Verdana" FontSize="24"/>
+
+            </Grid>
+        </Border>
+
+        <!--Middle Section-->
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <SolidColorBrush Color="#212121"/>
+            </Grid.Background>
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush/>
+                </Grid.Background>
+            </Grid>
+            <!--Input Form-->
+            <Border Width="428" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="White" BorderThickness="2" CornerRadius="7" Padding="30" Background="#212121" Height="482">
+                <StackPanel Margin="-22,-18,-22,-22">
+                    <TextBlock Foreground="White" FontFamily="Verdana"  FontSize="20" Margin="0 0 0 10" Text="Регистрация" HorizontalAlignment="Center"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="83*"/>
+                            <ColumnDefinition Width="79*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelName" HorizontalAlignment="Left" Foreground="White" Content="Имя" FontFamily="Verdana" VerticalAlignment="Center" Height="24" Margin="10,23,40,0" Width="120"/>
+                        <TextBox x:Name="TextBoxName" MaxLength="33" Margin="0,25,0,0" Padding="0" Foreground="Black" 
+                                   Panel.ZIndex="1" HorizontalAlignment="Center" Width="226" Height="24" FontSize="14" Grid.ColumnSpan="2" VerticalAlignment="Top" />
+                    </Grid>
+                    <Label x:Name="TextBoxNameNotify" HorizontalAlignment="Right" Content="" Foreground="White" Height="25" Margin="0 0 92 0" FontFamily="Verdana"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="83*"/>
+                            <ColumnDefinition Width="79*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelSurname" HorizontalAlignment="Left" Foreground="White" Content="Фамилия" FontFamily="Verdana" VerticalAlignment="Center" Height="24" Margin="10,18,40,0" Width="120"/>
+                        <TextBox x:Name="TextBoxSurname" MaxLength="33" Margin="0,20,0,0" Padding="0" Foreground="Black" 
+                                   Panel.ZIndex="1" HorizontalAlignment="Center" Width="226" Height="24" FontSize="14" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                        <!--<ICon:PackIconMAterial/>-->
+                    </Grid>
+                    <Label x:Name="TextBoxSurnameNotify" HorizontalAlignment="Right" Content="" Foreground="White" Margin="0 0 92 0" Height="25"/>
+                    <!--Email TextBox-->
+                    <Grid>
+                        <Label x:Name="LabelEmail" HorizontalAlignment="Left" Foreground="White" Content="Email" FontFamily="Verdana" VerticalAlignment="Center" Height="24" Margin="10,18,242,0" Width="120"/>
+                        <TextBox x:Name="TextBoxEmail" Margin="0,20,0,0" Padding="0" Foreground="Black" 
+                                   Panel.ZIndex="1" HorizontalAlignment="Center" Width="226" Height="24" FontSize="14"/>
+                        <!--<ICon:PackIconMAterial/>-->
+                    </Grid>
+                    <Label x:Name="TextBoxEmailNotify" HorizontalAlignment="Right" Content="" FontFamily="Verdana" Foreground="White" Margin="0 0 92 0" Height="25"/>
+                    <!--Password TextBox-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="83*"/>
+                            <ColumnDefinition Width="79*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelPassword" HorizontalAlignment="Left" Foreground="White" Content="Пароль" FontFamily="Verdana" VerticalAlignment="Center" Height="24" Margin="10,18,40,0" Width="120"/>
+
+                        <TextBox x:Name="TextBoxPassword" MaxLength="33" Margin="0,20,0,0" Padding="0" Foreground="Black" 
+                                   Panel.ZIndex="1" HorizontalAlignment="Center" Width="226" Height="24" FontSize="14" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                        <!--<ICon:PackIconMAterial/>-->
+                    </Grid>
+                    <Label x:Name="TextBoxPasswordNotify" HorizontalAlignment="Right" Content="" Foreground="White" Margin="0 0 92 0" Height="25"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="83*"/>
+                            <ColumnDefinition Width="79*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelPasswordRepeat" HorizontalAlignment="Left" Foreground="White" Content="Повторный" FontFamily="Verdana" VerticalAlignment="Center" Height="24" Margin="10,18,40,0" Width="120"/>
+
+                        <TextBox x:Name="TextBoxPasswordRepeat" MaxLength="33" Margin="0,20,0,0" Padding="0" Foreground="Black" 
+                                   Panel.ZIndex="1" HorizontalAlignment="Center" Width="226" Height="24" FontSize="14" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                        <!--<ICon:PackIconMAterial/>-->
+                    </Grid>
+                    <Label x:Name="TextBoxPasswordRepeatNotify" HorizontalAlignment="Right" Content="" FontFamily="Verdana" Foreground="White" Margin="0 0 92 0" Height="25"/>
+
+                    <!--Buttons-->
+                    <Grid Margin="0 10 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="SignInButton" Content="Вход" Style="{StaticResource mainButton}" Margin="10,10,5,0" BorderBrush="White" Background="White" Foreground="Black" Click="SignInButton_Click"/>
+                        <Button x:Name="SignUpButton" Content="Зарегистрироваться" Style="{StaticResource mainButton}" Grid.Column ="1" Margin="5,10,10,0" BorderBrush="White" Background="White" Foreground="Black" Click="SignUpButton_Click"/>
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!--Bottom Section-->
+        <Border Grid.Row="2" BorderThickness="0 2 0 0" BorderBrush="White" CornerRadius="0 0 5 5" Padding="10" Background="#1C1C1C">
+            <Grid>
+                <TextBlock Margin="15 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="White" Text="Car House Co. 2023"/>
+
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <TextBlock Margin="15 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="White" Text="Car Rental"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

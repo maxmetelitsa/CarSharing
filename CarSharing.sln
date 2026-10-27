@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharing", "CarSharing\CarSharing.csproj", "{AA2047D5-A6DB-4F0E-B970-158E720261DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharing.Tests", "CarSharing.Tests\CarSharing.Tests.csproj", "{D3DDC891-3692-4791-BDBF-30EDF73C9D27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA2047D5-A6DB-4F0E-B970-158E720261DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2047D5-A6DB-4F0E-B970-158E720261DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2047D5-A6DB-4F0E-B970-158E720261DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2047D5-A6DB-4F0E-B970-158E720261DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DDC891-3692-4791-BDBF-30EDF73C9D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DDC891-3692-4791-BDBF-30EDF73C9D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DDC891-3692-4791-BDBF-30EDF73C9D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DDC891-3692-4791-BDBF-30EDF73C9D27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CE8AE88-982D-4B9E-A4F4-9D33351C0E29}
+	EndGlobalSection
+EndGlobal
